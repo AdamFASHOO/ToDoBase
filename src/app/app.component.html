@@ -1,18 +1,40 @@
-<h2>To Do List</h2>
+<!DOCTYPE html>
+<html>
 
-<p>Filter Tasks by Name</p>
-<input type="text" [(ngModel)]="filterText"/>
-<button (click)="filterArray(filterText)">Filter ToDos</button>
+  <head>
 
-<ol>
-  <li *ngFor="let t of filteredTasks; index as i" [ngClass]="t.Completed ? 'strikeThrough' : '' ">
-    <button *ngIf="!t.Completed" (click)="completeTask(i)" >Completed</button>
-    {{t.TaskName}}
-    <button (click)="removeTask(i)">X</button>
-  </li>
-</ol>
+    <!-- <title>To Do List</title> -->
+    <!-- <h2>To Do List</h2> -->
+    <!-- <link rel="stylesheet" href="styles.css"> -->
 
-<br/>
-<p>Add New Task</p>
-<input [(ngModel)]="newToDo.TaskName" type="text" name="TaskName" id="TaskName" />
-<button (click)="addTask()">Add New Task</button>
+    <!-- ^Redundant? Maybe override -->
+
+  </head>
+
+  <body>
+    <h2>~TO DO LIST~</h2>
+    <p>Filter Tasks by Name</p>
+    <input type="text" [(ngModel)]="filterText" />
+    <button (click)="filterArray(filterText)">Filter</button>
+
+    <div class="taskList">
+      <ol>
+        <li *ngFor="let t of filteredTasks; index as i" [ngClass]="t.Completed ? 'strikeThrough' : '' ">
+          <button *ngIf="!t.Completed" (click)="completeTask(i)">Completed</button>
+          {{t.TaskName}}
+          <button (click)="removeTask(i)">X</button>
+        </li>
+      </ol>
+    </div>
+
+  </body>
+  <footer>
+    <br />
+    <div class="newTask">
+      <p>Add New Task</p>
+      <input [(ngModel)]="newToDo.TaskName" type="text" name="TaskName" id="TaskName" />
+      <button (click)="addTask()">Add</button>
+    </div>
+  </footer>
+
+</html>
