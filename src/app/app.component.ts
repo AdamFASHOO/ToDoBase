@@ -19,7 +19,7 @@ export class AppComponent {
   filterText: string = "";
   filteredTasks: ToDo[] = this.ToDoList;
 
-  addTask(): void{
+  addTask(): void {
     let t = Object.assign({}, this.newToDo);
     this.ToDoList.push(t);
   }
