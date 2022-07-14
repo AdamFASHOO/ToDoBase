@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+
+/*can replace <.all> with <body>  */
+.all {
+    font-weight: 300;
+    background-image: linear-gradient(to right, #f857a6, #ff5858);
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+}
